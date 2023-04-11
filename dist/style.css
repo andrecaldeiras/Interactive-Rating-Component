@@ -1,0 +1,105 @@
+@font-face {
+  font-family: "Overpass";
+  src: url("../Overpass-VariableFont_wght.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Overpass;
+  background: #121417;
+  font-size: 15px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+
+.card {
+  background: radial-gradient(ellipse at top, #252d37 -50%, transparent 200%);
+  margin: 50% 5%;
+  padding: 35px 35px;
+  border-radius: 20px;
+  max-width: 350px;
+}
+.card__button {
+  all: unset;
+  background: #fb7413;
+  color: white;
+  width: 90%;
+  border-radius: 100vw;
+  text-align: center;
+  padding: 5%;
+  letter-spacing: 0.15rem;
+  cursor: pointer;
+}
+.card__button:hover {
+  background: white;
+  color: #fb7413;
+}
+.card__ratings {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+.card__input {
+  color: #7c8798;
+  background: #252d37;
+  padding: 13px;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  margin: 10% 0;
+  text-align: center;
+  cursor: pointer;
+}
+.card__input--selected {
+  background: #fb7413;
+  color: white;
+}
+.card__input:hover {
+  background-color: #959eac;
+  color: white;
+}
+.card__state .icon--star {
+  background-color: #252d37;
+  padding: 5%;
+  border-radius: 100%;
+}
+.card__state--hidden {
+  visibility: hidden;
+  position: absolute;
+}
+.card__state--submitted {
+  text-align: center;
+  padding: 5% 2%;
+}
+.card__state--submitted .submitted__illustration--text {
+  color: #fb7413;
+  background: #252d37;
+  padding: 0.6rem 0;
+  margin: 8% 20%;
+  border-radius: 100vw;
+}
+.card__state--submitted .submitted__text--title {
+  color: white;
+  font-size: 1.6rem;
+  margin: 5% 0;
+}
+.card__state--submitted .submitted__text--description {
+  color: #959eac;
+}
+.card__text--title {
+  color: white;
+  font-size: 1.6rem;
+  margin: 5% 0;
+}
+.card__text--description {
+  color: #959eac;
+}
