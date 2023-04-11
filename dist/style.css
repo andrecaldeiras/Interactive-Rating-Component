@@ -15,18 +15,15 @@ body {
   font-size: 15px;
 }
 
-main {
-  display: flex;
-  justify-content: center;
-  align-self: center;
-}
-
 .card {
   background: radial-gradient(ellipse at top, #252d37 -50%, transparent 200%);
-  margin: 50% 5%;
   padding: 35px 35px;
   border-radius: 20px;
   max-width: 350px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .card__button {
   all: unset;
