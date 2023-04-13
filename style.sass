@@ -45,6 +45,7 @@ main
         padding: 5%
         letter-spacing: .15rem
         cursor: pointer
+        text-transform: uppercase
 
         &:hover
             background: $n--white
@@ -54,25 +55,44 @@ main
         display: flex
         flex-flow: row
         justify-content: space-between
-
-    &__input
-        color: $n--medium-grey
-        background: $n--dark-blue
-        padding: 13px
-        width: 20px
-        height: 20px
-        border-radius: 100%
         margin: 10% 0
-        text-align: center
-        cursor: pointer
 
-        &--selected
-            background: $p--orange
-            color: $n--white
+        &-input
+            display: flex
+            justify-content: center
+            align-items: center
 
-        &:hover
-            background-color: $n--light-grey
-            color: $n--white
+            .ratings-input
+                background: $n--light-grey
+
+                &:checked
+                    background: $p--orange
+                    ~ .ratings-label
+                        color: $n--white
+                    
+            &:hover
+                .ratings-label
+                    color: $n--white
+                .ratings-input
+                    background: $n--light-grey
+
+            .ratings-input
+                appearance: none
+                position: relative
+                color: $n--medium-grey
+                background: $n--dark-blue
+                padding: 13px
+                width: 25px
+                height: 25px
+                padding: 25px
+                border-radius: 100%
+                text-align: center
+                cursor: pointer
+
+            .ratings-label
+                cursor: pointer
+                position: absolute
+                color: $n--medium-grey
 
     &__state
         .icon--star

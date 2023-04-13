@@ -35,6 +35,7 @@ body {
   padding: 5%;
   letter-spacing: 0.15rem;
   cursor: pointer;
+  text-transform: uppercase;
 }
 .card__button:hover {
   background: white;
@@ -44,25 +45,45 @@ body {
   display: flex;
   flex-flow: row;
   justify-content: space-between;
+  margin: 10% 0;
 }
-.card__input {
+.card__ratings-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card__ratings-input .ratings-input {
+  background: #959eac;
+}
+.card__ratings-input .ratings-input:checked {
+  background: #fb7413;
+}
+.card__ratings-input .ratings-input:checked ~ .ratings-label {
+  color: white;
+}
+.card__ratings-input:hover .ratings-label {
+  color: white;
+}
+.card__ratings-input:hover .ratings-input {
+  background: #959eac;
+}
+.card__ratings-input .ratings-input {
+  appearance: none;
+  position: relative;
   color: #7c8798;
   background: #252d37;
   padding: 13px;
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
+  padding: 25px;
   border-radius: 100%;
-  margin: 10% 0;
   text-align: center;
   cursor: pointer;
 }
-.card__input--selected {
-  background: #fb7413;
-  color: white;
-}
-.card__input:hover {
-  background-color: #959eac;
-  color: white;
+.card__ratings-input .ratings-label {
+  cursor: pointer;
+  position: absolute;
+  color: #7c8798;
 }
 .card__state .icon--star {
   background-color: #252d37;
