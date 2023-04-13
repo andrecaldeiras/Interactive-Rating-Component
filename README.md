@@ -28,8 +28,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/interactive-rating-component-zpBX29QZyf](https://www.frontendmentor.io/solutions/interactive-rating-component-zpBX29QZyf)
+- Live Site URL: [https://andrecaldeiras.github.io/Interactive-Rating-Component/dist/](https://andrecaldeiras.github.io/Interactive-Rating-Component/dist/)
 
 ## My process
 
@@ -44,13 +44,23 @@ Users should be able to:
 - Pug
 
 ```pug
-  .card__ratings(name="ratings")
-      a.card__input 1
-      a.card__input 2
-      a.card__input 3
-      a.card__input 4
-      a.card__input 5
-  button.card__button SUBMIT
+.card__ratings(name="ratings")
+                        .card__ratings-input
+                            input.ratings-input(type="radio" name="rating" id="1" value="1")
+                            label.ratings-label(for="1") 1
+                        .card__ratings-input
+                            input.ratings-input(type="radio" name="rating" id="2" value="2")
+                            label.ratings-label(for="2") 2
+                        .card__ratings-input
+                            input.ratings-input(type="radio" name="rating" id="3" value="3")
+                            label.ratings-label(for="3") 3
+                        .card__ratings-input
+                            input.ratings-input(type="radio" name="rating" id="4" value="4")
+                            label.ratings-label(for="4") 4
+                        .card__ratings-input
+                            input.ratings-input(type="radio" name="rating" id="5" value="5")
+                            label.ratings-label(for="5") 5
+                    input.card__button(type="submit" value="Submit") 
 ```
 ```sass
 @mixin title()
@@ -59,11 +69,16 @@ Users should be able to:
     margin: 5% 0
 ```
 ```js
-for (const value of inputNumber) {
-    value.addEventListener("click", function() {
-        cleanValues();
-        value.classList.toggle("card__input--selected");
-        rating = value.textContent;
-    });
-}
+submit.addEventListener("click", function() {
+    const rating = document.querySelector(".ratings-input:checked").value;
+    console.log(rating)
+    if (rating == 0) {
+        alert("Please input a valid rating");
+    }
+    else {
+        cardSubmitted.classList.toggle("card__state--hidden");
+        cardNormal.classList.toggle("card__state--hidden");
+        selectedText.textContent = "You selected " + rating + " out of 5";
+    }
+});
 ```
